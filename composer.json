@@ -1,6 +1,6 @@
 {
-    "name": "nattreid/dialog",
-    "description": "Dialog for Nette Framework",
+    "name": "nattreid/cookiepolicy",
+    "description": "Cookie policy for Nette Framework",
     "type": "library",
     "license": ["Unlicense"],
     "authors": [

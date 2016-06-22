@@ -1,6 +1,6 @@
 {
     "name": "cookiepolicy",
-    "description": "Dialog for Nette Framework",
+    "description": "Cookie policy for Nette Framework",
     "license": ["Unlicense"],
     "authors": [
         {
