@@ -1,0 +1,15 @@
+{
+    "name": "cookiepolicy",
+    "description": "Dialog for Nette Framework",
+    "license": ["Unlicense"],
+    "authors": [
+        {
+            "name": "Attreid",
+            "email": "attreid@gmail.com"
+        }
+    ],
+    "ignore": [
+        "src",
+        "*.json"
+    ]
+}

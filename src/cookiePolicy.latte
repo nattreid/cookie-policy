@@ -1,0 +1,7 @@
+{snippet cookiePolicy}
+    <div id="cookiePolicy" n:if="$view">
+        {_'default.cookiePolicy.text'}
+        <a n:ifset="$link" href="{$link}">{_'default.cookiePolicy.link'}</a>
+        <a class="ajax button" n:href="agree!" data-ajax-off="history">{_'default.cookiePolicy.understand'}</a>
+    </div>
+{/snippet}

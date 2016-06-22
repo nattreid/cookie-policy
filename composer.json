@@ -1,0 +1,23 @@
+{
+    "name": "nattreid/dialog",
+    "description": "Dialog for Nette Framework",
+    "type": "library",
+    "license": ["Unlicense"],
+    "authors": [
+        {
+            "name": "Attreid",
+            "email": "attreid@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">= 5.6",
+        "nette/http": "~2.3"
+    },
+    "require-dev": {
+        "nette/tester": "~1.6"
+    },
+    "minimum-stability": "stable",
+    "autoload": {
+        "classmap": ["src/"]
+    }
+}
