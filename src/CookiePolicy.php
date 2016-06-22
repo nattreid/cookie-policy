@@ -18,7 +18,7 @@ class CookiePolicy extends \Nette\Application\UI\Control {
     private $link;
 
     /** @var boolean */
-    private $view = false;
+    private $view = FALSE;
 
     public function __construct(Session $session) {
         $this->session = $session;
