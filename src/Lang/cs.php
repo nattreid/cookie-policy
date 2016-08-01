@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'CookiePolicy.text' => 'Při poskytování služeb nám pomáhají cookies. Používáním webu s tím vyjadřujete souhlas.',
-    'CookiePolicy.link' => 'Více informací',
-    'CookiePolicy.understand' => 'Rozumím',
+    'cookiePolicy.text' => 'Při poskytování služeb nám pomáhají cookies. Používáním webu s tím vyjadřujete souhlas.',
+    'cookiePolicy.link' => 'Více informací',
+    'cookiePolicy.understand' => 'Rozumím',
 ];
