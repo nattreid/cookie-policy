@@ -2,7 +2,8 @@
 
 namespace NAttreid\CookiePolicy;
 
-use Nette\Http\Session;
+use Nette\Http\Session,
+    Nette\Localization\ITranslator;
 
 /**
  * Ochrana prav pri pouzivani cookies
@@ -20,8 +21,20 @@ class CookiePolicy extends \Nette\Application\UI\Control {
     /** @var boolean */
     private $view = FALSE;
 
+    /** @var ITranslator */
+    private $translator;
+
     public function __construct(Session $session) {
         $this->session = $session;
+        $this->translator = new Lang\Translator;
+    }
+
+    public function setTranslator(ITranslator $translator) {
+        $this->translator = $translator;
+    }
+
+    public function getTranslator() {
+        return $this->translator;
     }
 
     /**
@@ -54,6 +67,8 @@ class CookiePolicy extends \Nette\Application\UI\Control {
     }
 
     public function render() {
+        $this->template->addFilter('translate', [$this->translator, 'translate']);
+
         $session = $this->session->getSection('cookiePolicy');
         $this->template->view = isset($session->view) ? $session->view : $this->view;
 
