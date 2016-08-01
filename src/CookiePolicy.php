@@ -29,10 +29,18 @@ class CookiePolicy extends \Nette\Application\UI\Control {
         $this->translator = new Lang\Translator;
     }
 
+    /**
+     * Nastavi translator
+     * @param ITranslator $translator
+     */
     public function setTranslator(ITranslator $translator) {
         $this->translator = $translator;
     }
 
+    /**
+     * Vrati Translator
+     * @return Lang\Translator
+     */
     public function getTranslator() {
         return $this->translator;
     }

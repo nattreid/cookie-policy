@@ -4,6 +4,7 @@ Nastavení v **config.neon**
 services:
     - NAttreid\CookiePolicy\ICookiePolicyFactory
 ```
+
 ## Použití
 ```php
 /** @var \NAttreid\CookiePolicy\ICookiePolicyFactory @inject */
@@ -11,6 +12,9 @@ public $cookiePolicyFactory;
 
 protected function createComponentCookiePolicy() {
     $control = $this->cookiePolicyFactory->create();
+
+    // pro zmenu jazyka
+    $this->getTranslator()->setLang('cs');
 
     $control->setLink('/linkToText');
 
