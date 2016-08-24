@@ -8,8 +8,11 @@
             "email": "attreid@gmail.com"
         }
     ],
+    "main": [
+        "./assets/cookiePolicy.less"
+    ],
     "ignore": [
-        "src",
-        "*.json"
+        "/src",
+        "/composer.json"
     ]
 }
