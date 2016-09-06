@@ -1,17 +1,17 @@
 {
-    "name": "utils",
-    "description": "Cookie policy for Nette Framework",
-    "main": "gulpfile.js",
-    "repository": {
-        "type": "git",
-        "url": "git@git.newtravel.cz:nattreid/cookiepolicy.git"
-    },
-    "author": "Attreid",
-    "license": "Unlicense",
-    "devDependencies": {
-        "gulp": "^3.9.1",
-        "gulp-clean-css": "^2.0.12",
-        "gulp-less": "^3.1.0",
-        "gulp-rename": "^1.2.2"
-    }
+  "name": "utils",
+  "description": "Cookie policy for Nette Framework",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git@git.newtravel.cz:nattreid/cookiepolicy.git"
+  },
+  "author": "Attreid",
+  "license": "Unlicense",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.12",
+    "gulp-less": "^3.1.0",
+    "gulp-rename": "^1.2.2"
+  }
 }

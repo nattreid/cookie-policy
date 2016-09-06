@@ -1,18 +1,20 @@
 {
-    "name": "cookiepolicy",
-    "description": "Cookie policy for Nette Framework",
-    "license": ["Unlicense"],
-    "authors": [
-        {
-            "name": "Attreid",
-            "email": "attreid@gmail.com"
-        }
-    ],
-    "main": [
-        "./assets/cookiePolicy.less"
-    ],
-    "ignore": [
-        "/src",
-        "/composer.json"
-    ]
+  "name": "cookiepolicy",
+  "description": "Cookie policy for Nette Framework",
+  "license": [
+    "Unlicense"
+  ],
+  "authors": [
+    {
+      "name": "Attreid",
+      "email": "attreid@gmail.com"
+    }
+  ],
+  "main": [
+    "./assets/cookiePolicy.less"
+  ],
+  "ignore": [
+    "/src",
+    "/composer.json"
+  ]
 }
