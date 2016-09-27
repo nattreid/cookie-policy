@@ -2,6 +2,7 @@
 
 namespace NAttreid\CookiePolicy;
 
+use Nette\Http\Request;
 use Nette\Http\Session;
 use Nette\Localization\ITranslator;
 
@@ -25,10 +26,14 @@ class CookiePolicy extends \Nette\Application\UI\Control
 	/** @var ITranslator */
 	private $translator;
 
-	public function __construct(Session $session)
+	/** @var Request */
+	private $request;
+
+	public function __construct(Session $session, Request $request)
 	{
 		parent::__construct();
 		$this->session = $session;
+		$this->request = $request;
 		$this->translator = new Lang\Translator;
 	}
 
@@ -64,12 +69,12 @@ class CookiePolicy extends \Nette\Application\UI\Control
 	 */
 	public function handleAgree()
 	{
-		if ($this->presenter->isAjax()) {
+		if ($this->request->isAjax()) {
 			$session = $this->session->getSection('cookiePolicy');
 			$session->view = FALSE;
 			$this->redrawControl('cookiePolicy');
 		} else {
-			$this->presenter->redirect('Homepage:');
+			$this->redirect('this');
 		}
 	}
 
