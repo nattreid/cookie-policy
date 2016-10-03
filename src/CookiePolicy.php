@@ -21,7 +21,7 @@ class CookiePolicy extends \Nette\Application\UI\Control
 	private $link;
 
 	/** @var boolean */
-	private $view = FALSE;
+	private $view = false;
 
 	/** @var ITranslator */
 	private $translator;
@@ -59,7 +59,7 @@ class CookiePolicy extends \Nette\Application\UI\Control
 	 * Nastavi zobrazeni
 	 * @param boolean $view
 	 */
-	public function setView($view = TRUE)
+	public function setView($view = true)
 	{
 		$this->view = $view;
 	}
@@ -71,7 +71,7 @@ class CookiePolicy extends \Nette\Application\UI\Control
 	{
 		if ($this->request->isAjax()) {
 			$session = $this->session->getSection('cookiePolicy');
-			$session->view = FALSE;
+			$session->view = false;
 			$this->redrawControl('cookiePolicy');
 		} else {
 			$this->redirect('this');
