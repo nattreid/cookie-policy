@@ -4,29 +4,32 @@ declare(strict_types = 1);
 
 namespace NAttreid\CookiePolicy\Lang;
 
+use InvalidArgumentException;
+use Nette\Localization\ITranslator;
+
 /**
  * Translator
  *
  * @author Attreid <attreid@gmail.com>
  */
-class Translator implements \Nette\Localization\ITranslator
+class Translator implements ITranslator
 {
-
+	/** @var string[] */
 	private $translations;
 
 	/**
 	 * Nastavi jazyk
 	 * @param string $lang
-	 * @throws \InvalidArgumentException
+	 * @throws InvalidArgumentException
 	 */
-	public function setLang($lang)
+	public function setLang(string $lang)
 	{
 		if (!$this->translations = @include(__DIR__ . "/$lang.php")) {
-			throw new \InvalidArgumentException("Translations for language '$lang' not found.");
+			throw new InvalidArgumentException("Translations for language '$lang' not found.");
 		}
 	}
 
-	private function getTranslations()
+	private function getTranslations(): array
 	{
 		if ($this->translations === null) {
 			$this->setLang('en');
