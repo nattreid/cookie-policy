@@ -1,7 +1,11 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace NAttreid\CookiePolicy;
 
+use NAttreid\CookiePolicy\Lang\Translator;
+use Nette\Application\UI\Control;
 use Nette\Http\Request;
 use Nette\Http\Session;
 use Nette\Localization\ITranslator;
@@ -11,7 +15,7 @@ use Nette\Localization\ITranslator;
  *
  * @author Attreid <attreid@gmail.com>
  */
-class CookiePolicy extends \Nette\Application\UI\Control
+class CookiePolicy extends Control
 {
 
 	/** @var Session */
@@ -20,7 +24,7 @@ class CookiePolicy extends \Nette\Application\UI\Control
 	/** @var string */
 	private $link;
 
-	/** @var boolean */
+	/** @var bool */
 	private $view = false;
 
 	/** @var ITranslator */
@@ -34,7 +38,7 @@ class CookiePolicy extends \Nette\Application\UI\Control
 		parent::__construct();
 		$this->session = $session;
 		$this->request = $request;
-		$this->translator = new Lang\Translator;
+		$this->translator = new Translator;
 	}
 
 	/**
@@ -48,18 +52,18 @@ class CookiePolicy extends \Nette\Application\UI\Control
 
 	/**
 	 * Vrati Translator
-	 * @return Lang\Translator
+	 * @return Translator
 	 */
-	public function getTranslator()
+	public function getTranslator(): Translator
 	{
 		return $this->translator;
 	}
 
 	/**
 	 * Nastavi zobrazeni
-	 * @param boolean $view
+	 * @param bool $view
 	 */
-	public function setView($view = true)
+	public function setView(bool $view = true): bool
 	{
 		$this->view = $view;
 	}
@@ -82,7 +86,7 @@ class CookiePolicy extends \Nette\Application\UI\Control
 	 * Nastavi link pro info
 	 * @param string $link
 	 */
-	public function setLink($link)
+	public function setLink(string $link)
 	{
 		$this->link = $link;
 	}
@@ -106,7 +110,5 @@ class CookiePolicy extends \Nette\Application\UI\Control
 
 interface ICookiePolicyFactory
 {
-
-	/** @return CookiePolicy */
-	public function create();
+	public function create(): CookiePolicy;
 }
