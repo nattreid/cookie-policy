@@ -63,7 +63,7 @@ class CookiePolicy extends Control
 	 * Nastavi zobrazeni
 	 * @param bool $view
 	 */
-	public function setView(bool $view = true): bool
+	public function setView(bool $view = true)
 	{
 		$this->view = $view;
 	}
