@@ -4,7 +4,7 @@
   "main": "gulpfile.js",
   "repository": {
     "type": "git",
-    "url": "git@git.newtravel.cz:nattreid/cookiepolicy.git"
+    "url": "git@github.com:nattreid/cookie-policy.git"
   },
   "author": "Attreid",
   "license": "Unlicense",
