@@ -1,9 +1,9 @@
 {
-  "name": "nattreid/cookiepolicy",
+  "name": "nattreid/cookie-policy",
   "description": "Cookie policy for Nette Framework",
   "type": "library",
   "license": [
-    "Unlicense"
+    "MIT"
   ],
   "authors": [
     {

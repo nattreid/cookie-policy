@@ -1,5 +1,5 @@
 {
-  "name": "utils",
+  "name": "nattreid-cookie-policy",
   "description": "Cookie policy for Nette Framework",
   "main": "gulpfile.js",
   "repository": {
