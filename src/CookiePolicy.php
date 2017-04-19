@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace NAttreid\CookiePolicy;
 
@@ -45,7 +45,7 @@ class CookiePolicy extends Control
 	 * Nastavi translator
 	 * @param ITranslator $translator
 	 */
-	public function setTranslator(ITranslator $translator)
+	public function setTranslator(ITranslator $translator): void
 	{
 		$this->translator = $translator;
 	}
@@ -63,7 +63,7 @@ class CookiePolicy extends Control
 	 * Nastavi zobrazeni
 	 * @param bool $view
 	 */
-	public function setView(bool $view = true)
+	public function setView(bool $view = true): void
 	{
 		$this->view = $view;
 	}
@@ -71,7 +71,7 @@ class CookiePolicy extends Control
 	/**
 	 * Potvrzeni
 	 */
-	public function handleAgree()
+	public function handleAgree(): void
 	{
 		if ($this->request->isAjax()) {
 			$session = $this->session->getSection('cookiePolicy');
@@ -86,17 +86,17 @@ class CookiePolicy extends Control
 	 * Nastavi link pro info
 	 * @param string $link
 	 */
-	public function setLink(string $link)
+	public function setLink(string $link): void
 	{
 		$this->link = $link;
 	}
 
-	public function render()
+	public function render(): void
 	{
 		$this->template->addFilter('translate', [$this->translator, 'translate']);
 
 		$session = $this->session->getSection('cookiePolicy');
-		$this->template->view = isset($session->view) ? $session->view : $this->view;
+		$this->template->view = $session->view ?? $this->view;
 
 		if (isset($this->link)) {
 			$this->template->link = $this->link;
