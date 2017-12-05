@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace NAttreid\CookiePolicy;
 
 use NAttreid\CookiePolicy\Lang\Translator;
+use Nette\Application\AbortException;
 use Nette\Application\UI\Control;
 use Nette\Http\Request;
 use Nette\Http\Session;
@@ -70,6 +71,7 @@ class CookiePolicy extends Control
 
 	/**
 	 * Potvrzeni
+	 * @throws AbortException
 	 */
 	public function handleAgree(): void
 	{
