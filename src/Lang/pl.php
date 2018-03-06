@@ -1,7 +1,7 @@
 <?php
 
 return [
-	'cookiePolicy.text' => 'Ważne: Strona wykorzystuje pliki cookies.',
-	'cookiePolicy.link' => 'Więcej informacji',
-	'cookiePolicy.understand' => 'Rozumiem',
+	'nattreid.cookiePolicy.text' => 'Ważne: Strona wykorzystuje pliki cookies.',
+	'nattreid.cookiePolicy.link' => 'Więcej informacji',
+	'nattreid.cookiePolicy.understand' => 'Rozumiem',
 ];
