@@ -159,9 +159,9 @@ class CookiePolicy extends Control
 	{
 		if ($this->request->isAjax()) {
 			$data = Json::decode($json);
-			$this->analytics = $data->analytics;
-			$this->functional = $data->functional;
-			$this->commercial = $data->commercial;
+			$this->analytics = (bool) $data->analytics;
+			$this->functional = (bool) $data->functional;
+			$this->commercial = (bool) $data->commercial;
 			$this->visible = false;
 			$this->redrawControl('docker');
 		} else {
