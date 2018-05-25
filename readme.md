@@ -18,7 +18,7 @@ protected function createComponentCookiePolicy() {
 
     $control->setLink('/linkToText');
 
-    $control->setView();
+    $control->setEnable();
 
     return $control;
 }

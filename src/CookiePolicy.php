@@ -34,7 +34,7 @@ class CookiePolicy extends Control
 	private $link;
 
 	/** @var bool */
-	private $view = false;
+	private $enable = false;
 
 	/** @var ITranslator */
 	private $translator;
@@ -79,27 +79,39 @@ class CookiePolicy extends Control
 
 	protected function getAnalytics(): bool
 	{
+		if (!$this->enable) {
+			return true;
+		}
 		return $this->analytics ?? false;
 	}
 
 	protected function getFunctional(): bool
 	{
+		if (!$this->enable) {
+			return true;
+		}
 		return $this->functional ?? false;
 	}
 
 	protected function getCommercial(): bool
 	{
+		if (!$this->enable) {
+			return true;
+		}
 		return $this->commercial ?? false;
 	}
 
 	protected function getVisible(): bool
 	{
-		return $this->visible ?? $this->view;
+		if (!$this->enable) {
+			return false;
+		}
+		return $this->visible ?? true;
 	}
 
-	public function setView(bool $view = true): void
+	public function setEnable(bool $enable = true): void
 	{
-		$this->view = $view;
+		$this->enable = $enable;
 	}
 
 	public function setLink(string $link): void
