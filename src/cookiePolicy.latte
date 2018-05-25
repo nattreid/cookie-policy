@@ -3,19 +3,23 @@
      data-inactive="{_'nattreid.cookiePolicy.inactive'}">
     {snippet docker}
         <div class="nattreid-cookiePolicy-docker" n:if="$visible">
-            <div class="text">
-                {_'nattreid.cookiePolicy.text'}
-            </div>
-            <div class="links">
-                <a class="ajax allowAll" n:href="allowAll!" data-ajax-off="history">{_'nattreid.cookiePolicy.allowAll'}</a>
-                <a class="ajax" n:href="allowWithoutCommercial!"
-                   data-ajax-off="history">{_'nattreid.cookiePolicy.allowWithoutCommercial'}</a>
-                |
-                <a class="ajax" n:href="settings!" data-ajax-off="history">{_'nattreid.cookiePolicy.settings'}</a>
-                {if $link}
+            <div class="docker-head">{_'nattreid.cookiePolicy.privacySettings'}</div>
+            <div class="docker-content">
+                <div class="text">
+                    {_'nattreid.cookiePolicy.text'}
+                </div>
+                <div class="links">
+                    <a class="ajax allowAll" n:href="allowAll!"
+                       data-ajax-off="history">{_'nattreid.cookiePolicy.allowAll'}</a>
+                    <a class="ajax" n:href="allowWithoutCommercial!"
+                       data-ajax-off="history">{_'nattreid.cookiePolicy.allowWithoutCommercial'}</a>
                     |
-                    <a href="{$link}" target="_blank">{_'nattreid.cookiePolicy.link'}</a>
-                {/if}
+                    <a class="ajax" n:href="settings!" data-ajax-off="history">{_'nattreid.cookiePolicy.settings'}</a>
+                    {if $link}
+                        |
+                        <a href="{$link}" target="_blank">{_'nattreid.cookiePolicy.link'}</a>
+                    {/if}
+                </div>
             </div>
         </div>
     {/snippet}

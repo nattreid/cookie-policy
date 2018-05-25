@@ -68,6 +68,10 @@
 
             return false;
         });
+
+        $(document).on('click', '.nattreid-cookiePolicy .nattreid-cookiePolicy-docker .docker-head', function () {
+            $(this).parent().toggleClass('hover');
+        });
     });
 
 })(jQuery, window);

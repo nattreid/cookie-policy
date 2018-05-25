@@ -19,31 +19,82 @@
 
     box-sizing: border-box;
 
-    .text {
-      width: 70%;
+    .docker-head {
+      display: none;
+      vertical-align: top;
+      cursor: pointer;
+
+      &:after {
+        content: "";
+        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4gUZEDoOrJ7XQgAAA3NJREFUWMO9l99rHFUUxz/n7ISAirZP9akRRB+lSEUEkVS2j/o/+OCD/0FBili0lNTWJA3pD4MRC4WCIlYK6tYfL2pNHhS19EWkboXWSJsobrK7c+89PszOZGezs9lpEi8sM/vlznzOvfd7zr0j1ep4haRZ56pd/3da8xHrTQHp03EnNY3SGxGRWu2r+NDhI/u1omMYmBkiGCLpGKSMZmbWajXT4Wvwrj59YmLh4MEDkZkBiFSr4wpUrlz5On719aOXBF5I50vIt7Ja7Bxxu5VoBiJgxidvT7z5YrU6HgFIerP/mef3RVG0uF1wRGiurRJCyOBp894/fe3Hqz8AITOIVnRs2+CAWSD4jfAkNtmb+kAzg9j2wQFc7BKtp2MSkKQmlDSAxEjbBBcRYhcXwHMpL1HXMzYMaPeuh3h4z57E6gghDVzg7vIKS0t/4b1PaP3hdF+iTm5ad7hFcDPjwHPP8uS+J+jX6vWbnJ57D7NQCO8avgAh6qmCA6fYgBBCx9mG9MyxCwERpd1uF8ITzaSfCWXoNe8DNzNUBB8cnSJTACd99h5NWABPNRe7tOAMZUItY8JeY20MSHDObQbPmVDLmBCR3Oh7Z8P5ON0/hjWhDTahCO1WCx9CJ+VCkmIFSxG80Ww1cS55raowOjo60IRRzoSSH7l3jldefolHxvbmXuC97+uDxx97lHMzk5l2+88ljh4/yUgU3ZsJtVLh3fcvsPL3P1n6FcFFJNfn30aDyZnTfeAlTWhmTM+eo9lqbZoB60sRmDg5TRy77TFhHMdMzpwlhLApHOD41CkajdX11R1gQh22Eq6trXHqzFwG7AdXVaZnz3Lnzt1C+JYq4fLyCrPvzKOqfeFz8+ep3/xjkzK8xUp469Zt5s9fQFVz8IsffMS169e7ZmgHKqF1Ov762w0ufvgxqoqq8lntC769upAFVaYSltqOU01F+OnnX3jg/vvYvetBLn/6OSMjI0PBt7Qd5851qnzz3fesrjZKwQeZUMsewXzwVCqVknCQxCh5Ezrv62WP3a5TaMrBIYTw+wYTTrzx2oLBpWGXIngPWGm4GZen3jq2mI0j+0IRpVb70h06fOQpERkTEUPWq0lSd4RUi1tt2nFbu3LaOutbpIkFuzF14thi59NMgJAGkOVlnw/KndSCAp5cehI6v/9Dk/8Af2KSbKT65h4AAAAASUVORK5CYII=');
+        @size: 24px;
+        background-size: @size;
+        width: @size;
+        height: @size;
+        position: absolute;
+        top: 5px;
+        right: 20px;
+        transform: rotate(180deg);
+      }
     }
 
-    .links {
-      padding: 10px 0 0 0;
+    .docker-content {
+      -webkit-transition: max-height .8s ease;
+      -moz-transition: max-height .8s ease;
+      -ms-transition: max-height .8s ease;
+      -o-transition: max-height .8s ease;
+      transition: max-height .8s ease;
+      overflow: hidden;
 
-      a {
-        text-decoration: underline;
-        color: #fff;
-        font-size: 14px;
-        padding: 0 5px;
+      .text {
+        width: 70%;
+      }
 
-        &.allowAll {
-          background: #0096d6;
-          border-radius: 3px;
-          padding: 3px 8px;
-          display: inline-block;
-          cursor: pointer;
-          margin-left: 10px;
-          text-decoration: none;
+      .links {
+        padding: 10px 0 0 0;
+
+        a {
+          text-decoration: underline;
+          color: #fff;
+          font-size: 14px;
+          padding: 0 5px;
+
+          &.allowAll {
+            background: #0096d6;
+            border-radius: 3px;
+            padding: 3px 8px;
+            display: inline-block;
+            cursor: pointer;
+            margin-left: 10px;
+            text-decoration: none;
+          }
         }
       }
     }
+
+    &.hover {
+      .docker-head {
+        &:after {
+          transform: rotate(0deg);
+        }
+      }
+
+      .docker-content {
+        max-height: 600px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .docker-head {
+        display: block;
+      }
+
+      .docker-content {
+        max-height: 0;
+      }
+    }
   }
+
   .nattreid-cookiePolicy-modal {
     display: none;
 
