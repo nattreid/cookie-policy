@@ -1,7 +1,97 @@
-{snippet cookiePolicy}
-    <div id="cookiePolicy" n:if="$view">
-        {_'nattreid.cookiePolicy.text'}
-        <a n:ifset="$link" href="{$link}">{_'nattreid.cookiePolicy.link'}</a>
-        <a class="ajax button" n:href="agree!" data-ajax-off="history">{_'nattreid.cookiePolicy.understand'}</a>
-    </div>
-{/snippet}
+<div class="nattreid-cookiePolicy" id="{$componentId}"
+     data-active="{_'nattreid.cookiePolicy.active'}"
+     data-inactive="{_'nattreid.cookiePolicy.inactive'}">
+    {snippet docker}
+        <div class="nattreid-cookiePolicy-docker" n:if="$visible">
+            <div class="text">
+                {_'nattreid.cookiePolicy.text'}
+            </div>
+            <div class="links">
+                <a class="ajax allowAll" n:href="allowAll!" data-ajax-off="history">{_'nattreid.cookiePolicy.allowAll'}</a>
+                <a class="ajax" n:href="allowWithoutCommercial!"
+                   data-ajax-off="history">{_'nattreid.cookiePolicy.allowWithoutCommercial'}</a>
+                |
+                <a class="ajax" n:href="settings!">{_'nattreid.cookiePolicy.settings'}</a>
+                {if $link}
+                    |
+                    <a href="{$link}" target="_blank">{_'nattreid.cookiePolicy.link'}</a>
+                {/if}
+            </div>
+        </div>
+    {/snippet}
+    {snippet modal}
+        <div class="nattreid-cookiePolicy-modal" n:ifset="$viewModal">
+            <div class="modal-background"></div>
+            <div class="modal-wrapper">
+                <span class="modal-close"></span>
+                <div class="modal-title">{_'nattreid.cookiePolicy.title'}</div>
+                <ul>
+                    <li class="privacy active">
+                        <a href="#">{_'nattreid.cookiePolicy.privacy.title'}</a>
+                    </li>
+                    <li class="needed">
+                        <a href="#">{_'nattreid.cookiePolicy.needed.title'}</a>
+                    </li>
+                    <li class="analytics">
+                        <a href="#">{_'nattreid.cookiePolicy.analytics.title'}</a>
+                    </li>
+                    <li class="functional">
+                        <a href="#">{_'nattreid.cookiePolicy.functional.title'}</a>
+                    </li>
+                    <li class="commercial">
+                        <a href="#">{_'nattreid.cookiePolicy.commercial.title'}</a>
+                    </li>
+                </ul>
+                <div class="modal-content">
+                    <div class="privacy active">
+                        <p class="title">{_'nattreid.cookiePolicy.privacy.title'}</p>
+                        {_'nattreid.cookiePolicy.privacy.content'|noescape}
+                    </div>
+                    <div class="needed">
+                        <p class="title">{_'nattreid.cookiePolicy.needed.title'}</p>
+                        {_'nattreid.cookiePolicy.needed.content'|noescape}
+                        <div class="active">
+                            {_'nattreid.cookiePolicy.alwaysActive'}
+                        </div>
+                    </div>
+                    <div class="analytics">
+                        <p class="title">{_'nattreid.cookiePolicy.analytics.title'}</p>
+                        {_'nattreid.cookiePolicy.analytics.content'|noescape}
+                        <span class="checkbox" data-active="{$analytics}" data-type="analytics">
+                            <span></span>
+                            <p>{_'nattreid.cookiePolicy.' .($analytics ? 'active' : 'inactive')}</p>
+                        </span>
+                    </div>
+                    <div class="functional">
+                        <p class="title">{_'nattreid.cookiePolicy.functional.title'}</p>
+                        {_'nattreid.cookiePolicy.functional.content'|noescape}
+                        <span class="checkbox" data-active="{$functional}" data-type="functional">
+                            <span></span>
+                            <p>{_'nattreid.cookiePolicy.' .($functional ? 'active' : 'inactive')}</p>
+                        </span>
+                    </div>
+                    <div class="commercial">
+                        <p class="title">{_'nattreid.cookiePolicy.commercial.title'}</p>
+                        {_'nattreid.cookiePolicy.commercial.content'|noescape}
+                        <span class="checkbox" data-active="{$commercial}" data-type="commercial">
+                            <span></span>
+                            <p>{_'nattreid.cookiePolicy.' .($commercial ? 'active' : 'inactive')}</p>
+                        </span>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <a href="#" class="allowAll" data-href="{link allowAll!}">{_'nattreid.cookiePolicy.allowAll'}</a>
+                    <a href="#" class="save"
+                       data-href="{link save!, json => 'replaceQuery'}">{_'nattreid.cookiePolicy.save'}</a>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            function onload{$componentId|noescape}() {
+                var rand = {rand(1, 5000)};
+                $('#{$componentId|noescape}').find('.nattreid-cookiePolicy-modal').fadeIn();
+            }
+            {onLoad onload$componentId}
+        </script>
+    {/snippet}
+</div>
