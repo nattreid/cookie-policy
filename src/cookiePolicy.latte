@@ -11,7 +11,7 @@
                 <div class="links">
                     <a class="ajax allowAll" n:href="allowAll!"
                        data-ajax-off="history">{_'nattreid.cookiePolicy.allowAll'}</a>
-                    <a class="ajax" n:href="allowWithoutCommercial!"
+                    <a n:if="$config->commercial" class="ajax" n:href="allowWithoutCommercial!"
                        data-ajax-off="history">{_'nattreid.cookiePolicy.allowWithoutCommercial'}</a>
                     |
                     <a class="ajax" n:href="settings!" data-ajax-off="history">{_'nattreid.cookiePolicy.settings'}</a>
@@ -36,13 +36,13 @@
                     <li class="needed">
                         <a href="#">{_'nattreid.cookiePolicy.needed.title'}</a>
                     </li>
-                    <li class="analytics">
+                    <li class="analytics" n:if="$config->analytics">
                         <a href="#">{_'nattreid.cookiePolicy.analytics.title'}</a>
                     </li>
-                    <li class="functional">
+                    <li class="functional" n:if="$config->functional">
                         <a href="#">{_'nattreid.cookiePolicy.functional.title'}</a>
                     </li>
-                    <li class="commercial">
+                    <li class="commercial" n:if="$config->commercial">
                         <a href="#">{_'nattreid.cookiePolicy.commercial.title'}</a>
                     </li>
                 </ul>
@@ -58,7 +58,7 @@
                             {_'nattreid.cookiePolicy.alwaysActive'}
                         </div>
                     </div>
-                    <div class="analytics">
+                    <div class="analytics" n:if="$config->analytics">
                         <p class="title">{_'nattreid.cookiePolicy.analytics.title'}</p>
                         {_'nattreid.cookiePolicy.analytics.content'|noescape}
                         <span class="checkbox" data-active="{$analytics}" data-type="analytics">
@@ -66,7 +66,7 @@
                             <p>{_'nattreid.cookiePolicy.' .($analytics ? 'active' : 'inactive')}</p>
                         </span>
                     </div>
-                    <div class="functional">
+                    <div class="functional" n:if="$config->functional">
                         <p class="title">{_'nattreid.cookiePolicy.functional.title'}</p>
                         {_'nattreid.cookiePolicy.functional.content'|noescape}
                         <span class="checkbox" data-active="{$functional}" data-type="functional">
@@ -74,7 +74,7 @@
                             <p>{_'nattreid.cookiePolicy.' .($functional ? 'active' : 'inactive')}</p>
                         </span>
                     </div>
-                    <div class="commercial">
+                    <div class="commercial" n:if="$config->commercial">
                         <p class="title">{_'nattreid.cookiePolicy.commercial.title'}</p>
                         {_'nattreid.cookiePolicy.commercial.content'|noescape}
                         <span class="checkbox" data-active="{$commercial}" data-type="commercial">

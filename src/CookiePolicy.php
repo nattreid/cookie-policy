@@ -33,8 +33,8 @@ class CookiePolicy extends Control
 	/** @var string */
 	private $link;
 
-	/** @var bool */
-	private $enable = false;
+	/** @var Config */
+	private $config;
 
 	/** @var ITranslator */
 	private $translator;
@@ -65,6 +65,8 @@ class CookiePolicy extends Control
 		$this->functional =& $this->session->functional;
 		$this->commercial =& $this->session->commercial;
 		$this->visible =& $this->session->visible;
+
+		$this->config = new Config;
 	}
 
 	protected function setTranslator(ITranslator $translator): void
@@ -79,7 +81,7 @@ class CookiePolicy extends Control
 
 	protected function getAnalytics(): bool
 	{
-		if (!$this->enable) {
+		if (!$this->config) {
 			return true;
 		}
 		return $this->analytics ?? false;
@@ -87,7 +89,7 @@ class CookiePolicy extends Control
 
 	protected function getFunctional(): bool
 	{
-		if (!$this->enable) {
+		if (!$this->config) {
 			return true;
 		}
 		return $this->functional ?? false;
@@ -95,7 +97,7 @@ class CookiePolicy extends Control
 
 	protected function getCommercial(): bool
 	{
-		if (!$this->enable) {
+		if (!$this->config) {
 			return true;
 		}
 		return $this->commercial ?? false;
@@ -103,7 +105,7 @@ class CookiePolicy extends Control
 
 	protected function getVisible(): bool
 	{
-		if (!$this->enable) {
+		if (!$this->config->enable) {
 			return false;
 		}
 		return $this->visible ?? true;
@@ -111,7 +113,22 @@ class CookiePolicy extends Control
 
 	public function setEnable(bool $enable = true): void
 	{
-		$this->enable = $enable;
+		$this->config->enable = $enable;
+	}
+
+	public function setEnableAnalytics(bool $enable = true): void
+	{
+		$this->config->analytics = $enable;
+	}
+
+	public function setEnableCommercial(bool $enable = true): void
+	{
+		$this->config->commercial = $enable;
+	}
+
+	public function setEnableFunctional(bool $enable = true): void
+	{
+		$this->config->functional = $enable;
 	}
 
 	public function setLink(string $link): void
@@ -159,9 +176,15 @@ class CookiePolicy extends Control
 	{
 		if ($this->request->isAjax()) {
 			$data = Json::decode($json);
-			$this->analytics = (bool) $data->analytics;
-			$this->functional = (bool) $data->functional;
-			$this->commercial = (bool) $data->commercial;
+			if (isset($data->analytics)) {
+				$this->analytics = (bool) $data->analytics;
+			}
+			if (isset($data->functional)) {
+				$this->functional = (bool) $data->functional;
+			}
+			if (isset($data->commercial)) {
+				$this->commercial = (bool) $data->commercial;
+			}
 			$this->visible = false;
 			$this->redrawControl('docker');
 		} else {
@@ -176,6 +199,8 @@ class CookiePolicy extends Control
 		$this->template->componentId = $this->getUniqueId();
 		$this->template->visible = $this->getVisible();
 		$this->template->link = $this->link;
+
+		$this->template->config = $this->config;
 
 		$this->template->analytics = $this->analytics ?? true;
 		$this->template->functional = $this->functional ?? true;
