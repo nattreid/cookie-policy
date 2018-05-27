@@ -84,7 +84,7 @@ class CookiePolicy extends Control
 		if (!$this->config) {
 			return true;
 		}
-		return $this->analytics ?? false;
+		return $this->analytics ?? true;
 	}
 
 	protected function getFunctional(): bool
@@ -92,7 +92,7 @@ class CookiePolicy extends Control
 		if (!$this->config) {
 			return true;
 		}
-		return $this->functional ?? false;
+		return $this->functional ?? true;
 	}
 
 	protected function getCommercial(): bool
@@ -100,7 +100,7 @@ class CookiePolicy extends Control
 		if (!$this->config) {
 			return true;
 		}
-		return $this->commercial ?? false;
+		return $this->commercial ?? true;
 	}
 
 	protected function getVisible(): bool
@@ -202,9 +202,9 @@ class CookiePolicy extends Control
 
 		$this->template->config = $this->config;
 
-		$this->template->analytics = $this->analytics ?? true;
-		$this->template->functional = $this->functional ?? true;
-		$this->template->commercial = $this->commercial ?? true;
+		$this->template->analytics = $this->getAnalytics();
+		$this->template->functional = $this->getFunctional();
+		$this->template->commercial = $this->getCommercial();
 
 		$this->template->setFile(__DIR__ . '/cookiePolicy.latte');
 		$this->template->render();
