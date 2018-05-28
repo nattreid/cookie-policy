@@ -4,14 +4,13 @@ declare(strict_types=1);
 
 namespace NAttreid\CookiePolicy;
 
+use NAttreid\CookiePolicy\Hooks\CookiePolicyConfig;
 use NAttreid\CookiePolicy\Lang\Translator;
-use Nette\Application\AbortException;
 use Nette\Application\UI\Control;
 use Nette\Http\Request;
 use Nette\Http\Session;
 use Nette\Localization\ITranslator;
 use Nette\Utils\Json;
-use Tracy\Debugger;
 
 /**
  * Class CookiePolicy
@@ -33,7 +32,7 @@ class CookiePolicy extends Control
 	/** @var string */
 	private $link;
 
-	/** @var Config */
+	/** @var CookiePolicyConfig */
 	private $config;
 
 	/** @var ITranslator */
@@ -54,10 +53,11 @@ class CookiePolicy extends Control
 	/** @var bool */
 	private $visible;
 
-	public function __construct(Session $session, Request $request)
+	public function __construct(CookiePolicyConfig $config, Session $session, Request $request)
 	{
 		parent::__construct();
 		$this->session = $session->getSection('nattreid/cookiePolicy');
+		$this->config = new $config;
 		$this->request = $request;
 		$this->translator = new Translator;
 
@@ -65,8 +65,6 @@ class CookiePolicy extends Control
 		$this->functional =& $this->session->functional;
 		$this->commercial =& $this->session->commercial;
 		$this->visible =& $this->session->visible;
-
-		$this->config = new Config;
 	}
 
 	protected function setTranslator(ITranslator $translator): void
@@ -81,7 +79,7 @@ class CookiePolicy extends Control
 
 	protected function getAnalytics(): bool
 	{
-		if (!$this->config) {
+		if (!$this->config->enable) {
 			return true;
 		}
 		return $this->analytics ?? true;
@@ -89,7 +87,7 @@ class CookiePolicy extends Control
 
 	protected function getFunctional(): bool
 	{
-		if (!$this->config) {
+		if (!$this->config->enable) {
 			return true;
 		}
 		return $this->functional ?? true;
@@ -97,7 +95,7 @@ class CookiePolicy extends Control
 
 	protected function getCommercial(): bool
 	{
-		if (!$this->config) {
+		if (!$this->config->enable) {
 			return true;
 		}
 		return $this->commercial ?? true;
@@ -109,31 +107,6 @@ class CookiePolicy extends Control
 			return false;
 		}
 		return $this->visible ?? true;
-	}
-
-	public function setEnable(bool $enable = true): void
-	{
-		$this->config->enable = $enable;
-	}
-
-	public function setEnableAnalytics(bool $enable = true): void
-	{
-		$this->config->analytics = $enable;
-	}
-
-	public function setEnableCommercial(bool $enable = true): void
-	{
-		$this->config->commercial = $enable;
-	}
-
-	public function setEnableFunctional(bool $enable = true): void
-	{
-		$this->config->functional = $enable;
-	}
-
-	public function setLink(string $link): void
-	{
-		$this->link = $link;
 	}
 
 	public function handleAllowAll(): void
@@ -198,7 +171,6 @@ class CookiePolicy extends Control
 
 		$this->template->componentId = $this->getUniqueId();
 		$this->template->visible = $this->getVisible();
-		$this->template->link = $this->link;
 
 		$this->template->config = $this->config;
 

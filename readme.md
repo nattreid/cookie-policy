@@ -1,13 +1,20 @@
 # Cookie Policy pro Nette Framework
 Nastavení v **config.neon**
 ```neon
-services:
-    - NAttreid\CookiePolicy\ICookiePolicyFactory
+extensions:
+    cookiePolicy: NAtrreid\CookiePolicy\DI\CookiePolicyExtension
+    
+cookiePolicy:
+    enable: true
+    link: '/adresaStranky'
+    analytics: true
+    functional: true
+    commercial: true
 ```
 
 ## Použití
 ```php
-/** @var \NAttreid\CookiePolicy\ICookiePolicyFactory @inject */
+/** @var NAttreid\CookiePolicy\ICookiePolicyFactory @inject */
 public $cookiePolicyFactory;
 
 protected function createComponentCookiePolicy() {
@@ -15,10 +22,6 @@ protected function createComponentCookiePolicy() {
 
     // pro zmenu jazyka
     $control->getTranslator()->setLang('cs');
-
-    $control->setLink('/linkToText');
-
-    $control->setEnable();
 
     return $control;
 }

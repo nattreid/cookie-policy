@@ -2,29 +2,30 @@
 
 declare(strict_types=1);
 
-namespace NAttreid\CookiePolicy;
+namespace NAttreid\CookiePolicy\Hooks;
 
 use Nette\SmartObject;
 
 /**
- * Class Config
+ * Class CookiePolicyConfig
  *
  * @property bool $enable
  * @property bool $analytics
  * @property bool $functional
  * @property bool $commercial
+ * @property string|null link
  *
  * @author Attreid <attreid@gmail.com>
  */
-class Config
+class CookiePolicyConfig
 {
 	use SmartObject;
 
-	private $enable = false;
+	private $enable = true;
 	private $analytics = false;
 	private $functional = false;
 	private $commercial = false;
-
+	private $link;
 
 	protected function isEnable(): bool
 	{
@@ -64,5 +65,15 @@ class Config
 	protected function setCommercial(bool $commercial): void
 	{
 		$this->commercial = $commercial;
+	}
+
+	protected function getLink(): ?string
+	{
+		return $this->link;
+	}
+
+	protected function setLink(?string $link): void
+	{
+		$this->link = $link;
 	}
 }

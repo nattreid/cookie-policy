@@ -15,9 +15,9 @@
                        data-ajax-off="history">{_'nattreid.cookiePolicy.allowWithoutCommercial'}</a>
                     |
                     <a class="ajax" n:href="settings!" data-ajax-off="history">{_'nattreid.cookiePolicy.settings'}</a>
-                    {if $link}
+                    {if $config->link}
                         |
-                        <a href="{$link}" target="_blank">{_'nattreid.cookiePolicy.link'}</a>
+                        <a href="{$config->link}" target="_blank">{_'nattreid.cookiePolicy.link'}</a>
                     {/if}
                 </div>
             </div>
