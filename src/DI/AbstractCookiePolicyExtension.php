@@ -7,6 +7,7 @@ namespace NAttreid\CookiePolicy\DI;
 use NAttreid\CookiePolicy\CookiePolicy;
 use NAttreid\CookiePolicy\Hooks\CookiePolicyConfig;
 use NAttreid\CookiePolicy\ICookiePolicyFactory;
+use Nette;
 use Nette\DI\CompilerExtension;
 
 /**
@@ -29,7 +30,7 @@ abstract class AbstractCookiePolicyExtension extends CompilerExtension
 		$builder = $this->getContainerBuilder();
 		$config = $this->validateConfig($this->defaults, $this->getConfig());
 
-		$cookiePolicy = $this->prepareHook($config);
+		$cookiePolicy = $this->prepareConfig($config);
 
 		$builder->addDefinition($this->prefix('factory'))
 			->setImplement(ICookiePolicyFactory::class)
@@ -37,14 +38,15 @@ abstract class AbstractCookiePolicyExtension extends CompilerExtension
 			->setArguments([$cookiePolicy]);
 	}
 
-	protected function prepareHook(array $config)
+	protected function prepareConfig(array $config)
 	{
-		$googleApi = new CookiePolicyConfig;
-		$googleApi->enable = $config['enable'];
-		$googleApi->link = $config['link'];
-		$googleApi->analytics = $config['analytics'];
-		$googleApi->functional = $config['functional'];
-		$googleApi->commercial = $config['commercial'];
-		return $googleApi;
+		$builder = $this->getContainerBuilder();
+		return $builder->addDefinition($this->prefix('config'))
+			->setFactory(CookiePolicyConfig::class)
+			->addSetup('$enable', [$config['enable']])
+			->addSetup('$link', [$config['link']])
+			->addSetup('$analytics', [$config['analytics']])
+			->addSetup('$functional', [$config['functional']])
+			->addSetup('$commercial', [$config['commercial']]);
 	}
 }
