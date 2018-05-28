@@ -7,9 +7,6 @@ namespace NAttreid\CookiePolicy\DI;
 use NAttreid\CookiePolicy\CookiePolicy;
 use NAttreid\CookiePolicy\Hooks\CookiePolicyConfig;
 use NAttreid\CookiePolicy\ICookiePolicyFactory;
-use NAttreid\GoogleApi\GoogleApi;
-use NAttreid\GoogleApi\Hooks\GoogleApiConfig;
-use NAttreid\GoogleApi\IGoogleApiFactory;
 use Nette\DI\CompilerExtension;
 
 /**

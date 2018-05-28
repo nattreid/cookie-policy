@@ -5,11 +5,8 @@ declare(strict_types=1);
 namespace NAttreid\CookiePolicy\DI;
 
 use NAttreid\Cms\Configurator\Configurator;
-use NAttreid\Cms\DI\ExtensionTranslatorTrait;
 use NAttreid\CookiePolicy\Hooks\CookiePolicyConfig;
 use NAttreid\CookiePolicy\Hooks\CookiePolicyHook;
-use NAttreid\GoogleApi\Hooks\GoogleApiConfig;
-use NAttreid\GoogleApi\Hooks\GoogleApiHook;
 use NAttreid\WebManager\Services\Hooks\HookService;
 use Nette\DI\Statement;
 

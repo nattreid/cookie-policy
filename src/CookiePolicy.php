@@ -6,11 +6,13 @@ namespace NAttreid\CookiePolicy;
 
 use NAttreid\CookiePolicy\Hooks\CookiePolicyConfig;
 use NAttreid\CookiePolicy\Lang\Translator;
+use Nette\Application\AbortException;
 use Nette\Application\UI\Control;
 use Nette\Http\Request;
 use Nette\Http\Session;
 use Nette\Localization\ITranslator;
 use Nette\Utils\Json;
+use Nette\Utils\JsonException;
 
 /**
  * Class CookiePolicy
@@ -28,9 +30,6 @@ class CookiePolicy extends Control
 
 	/** @var Session */
 	private $session;
-
-	/** @var string */
-	private $link;
 
 	/** @var CookiePolicyConfig */
 	private $config;
@@ -109,6 +108,9 @@ class CookiePolicy extends Control
 		return $this->visible ?? true;
 	}
 
+	/**
+	 * @throws AbortException
+	 */
 	public function handleAllowAll(): void
 	{
 		if ($this->request->isAjax()) {
@@ -122,6 +124,9 @@ class CookiePolicy extends Control
 		}
 	}
 
+	/**
+	 * @throws AbortException
+	 */
 	public function handleAllowWithoutCommercial(): void
 	{
 		if ($this->request->isAjax()) {
@@ -135,6 +140,9 @@ class CookiePolicy extends Control
 		}
 	}
 
+	/**
+	 * @throws AbortException
+	 */
 	public function handleSettings(): void
 	{
 		if ($this->request->isAjax()) {
@@ -145,6 +153,11 @@ class CookiePolicy extends Control
 		}
 	}
 
+	/**
+	 * @param string $json
+	 * @throws AbortException
+	 * @throws JsonException
+	 */
 	public function handleSave(string $json): void
 	{
 		if ($this->request->isAjax()) {
