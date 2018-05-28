@@ -1,31 +1,5 @@
 <?php
 
 return [
-	'nattreid.cookiePolicy.text' => '',
-	'nattreid.cookiePolicy.link' => '',
-	'nattreid.cookiePolicy.settings' => '',
-	'nattreid.cookiePolicy.privacySettings' => '',
-	'nattreid.cookiePolicy.allowAll' => '',
-	'nattreid.cookiePolicy.save' => '',
-	'nattreid.cookiePolicy.allowWithoutCommercial' => '',
-	'nattreid.cookiePolicy.title' => '',
-	'nattreid.cookiePolicy.alwaysActive' => '',
-	'nattreid.cookiePolicy.active' => '',
-	'nattreid.cookiePolicy.inactive' => '',
-	'nattreid.cookiePolicy.privacy.title' => '',
-	'nattreid.cookiePolicy.privacy.content' => '',
-	'nattreid.cookiePolicy.needed.title' => '',
-	'nattreid.cookiePolicy.needed.content' => '',
-	'nattreid.cookiePolicy.analytics.title' => '',
-	'nattreid.cookiePolicy.analytics.content' => '',
-	'nattreid.cookiePolicy.functional.title' => '',
-	'nattreid.cookiePolicy.functional.content' => '',
-	'nattreid.cookiePolicy.commercial.title' => '',
-	'nattreid.cookiePolicy.commercial.content' => '',
 
-	'web.hooks.googleApi.enable' => 'Show cookie policy bar',
-	'web.hooks.googleApi.link' => 'Link for cookie policy information',
-	'web.hooks.googleApi.analytics' => 'Analytical cookies',
-	'web.hooks.googleApi.functional' => 'Functional cookies',
-	'web.hooks.googleApi.commercial' => 'Commercial cookies',
 ];

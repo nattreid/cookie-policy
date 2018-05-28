@@ -13,7 +13,7 @@ use Nette\SmartObject;
  * @property bool $analytics
  * @property bool $functional
  * @property bool $commercial
- * @property string|null link
+ * @property string|null $link
  *
  * @author Attreid <attreid@gmail.com>
  */

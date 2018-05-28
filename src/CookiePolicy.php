@@ -56,7 +56,7 @@ class CookiePolicy extends Control
 	{
 		parent::__construct();
 		$this->session = $session->getSection('nattreid/cookiePolicy');
-		$this->config = new $config;
+		$this->config = $config;
 		$this->request = $request;
 		$this->translator = new Translator;
 

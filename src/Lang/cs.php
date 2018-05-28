@@ -22,10 +22,4 @@ return [
 	'nattreid.cookiePolicy.functional.content' => 'Tyto soubory cookie umožňují, aby se vám web lépe přizpůsobil a abychom vám mohli nabídnout více funkcí. Mimo jiné slouží k uložení vašich voleb, upřednostňovaného jazyka nebo polohy. Soubory cookie tohoto typu nastavujeme my nebo třetí strany, jejichž služby na svých stránkách prezentujeme.<br/><br/>Pokud tyto soubory cookie nepovolíte, některé nebo žádné z těchto služeb nemusí fungovat správně.',
 	'nattreid.cookiePolicy.commercial.title' => 'Reklamní soubory cookie',
 	'nattreid.cookiePolicy.commercial.content' => 'Tyto soubory cookie nastavujeme my nebo naši partnerští inzerenti. Tyto společnosti si s jejich pomocí mohou vytvořit profil vašich zájmů a na základě toho vám na jiných stránkách mohou nabízet relevantní reklamy.<br/><br/>Neukládají přímo osobní údaje, ale pracují s jedinečnou identifikací prohlížeče a zařízení, prostřednictvím něhož se připojujete k internetu. Pokud tyto soubory cookie zakážete, budou se vám zobrazovat méně cílené reklamy.',
-
-	'web.hooks.googleApi.enable' => 'Zobrazit potvrzeni používání cookies',
-	'web.hooks.googleApi.link' => 'Link pro informace o používání cookies',
-	'web.hooks.googleApi.analytics' => 'Analytické soubory cookie',
-	'web.hooks.googleApi.functional' => 'Funkční soubory cookie',
-	'web.hooks.googleApi.commercial' => 'Reklamní soubory cookie',
 ];
