@@ -19,7 +19,7 @@
 
     box-sizing: border-box;
 
-    .docker-head {
+    .nc-docker-head {
       display: none;
       vertical-align: top;
       cursor: pointer;
@@ -38,7 +38,7 @@
       }
     }
 
-    .docker-content {
+    .nc-docker-content {
       -webkit-transition: max-height .8s ease;
       -moz-transition: max-height .8s ease;
       -ms-transition: max-height .8s ease;
@@ -73,23 +73,23 @@
     }
 
     &.hover {
-      .docker-head {
+      .nc-docker-head {
         &:after {
           transform: rotate(0deg);
         }
       }
 
-      .docker-content {
+      .nc-docker-content {
         max-height: 600px;
       }
     }
 
     @media (max-width: 600px) {
-      .docker-head {
+      .nc-docker-head {
         display: block;
       }
 
-      .docker-content {
+      .nc-docker-content {
         max-height: 0;
       }
     }
@@ -98,7 +98,7 @@
   .nattreid-cookiePolicy-modal {
     display: none;
 
-    .modal-background {
+    .nc-modal-background {
       background: rgba(0, 0, 0, 0.8);
       height: 100%;
       left: 0px;
@@ -107,7 +107,7 @@
       width: 100%;
     }
 
-    .modal-wrapper {
+    .nc-modal-wrapper {
       min-height: 300px;
       left: 50%;
       top: 0;
@@ -116,7 +116,7 @@
       width: 600px;
       background: #fff;
 
-      .modal-close {
+      .nc-modal-close {
         position: absolute;
         right: 5px;
         top: 5px;
@@ -128,7 +128,7 @@
         height: @size;
       }
 
-      .modal-title {
+      .nc-modal-title {
         border-bottom: 1px solid #ccc;
         width: 100%;
         text-align: center;
@@ -184,7 +184,7 @@
         }
       }
 
-      .modal-content {
+      .nc-modal-content {
         width: 66%;
         display: inline-block;
 
@@ -283,12 +283,12 @@
         width: auto;
         position: absolute;
 
-        ul, .modal-content {
+        ul, .nc-modal-content {
           width: auto;
           display: block;
         }
 
-        .modal-content {
+        .nc-modal-content {
           padding: 10px;
         }
       }

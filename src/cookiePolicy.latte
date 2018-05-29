@@ -3,8 +3,8 @@
      data-inactive="{_'nattreid.cookiePolicy.inactive'}">
     {snippet docker}
         <div class="nattreid-cookiePolicy-docker" n:if="$visible">
-            <div class="docker-head">{_'nattreid.cookiePolicy.privacySettings'}</div>
-            <div class="docker-content">
+            <div class="nc-docker-head">{_'nattreid.cookiePolicy.privacySettings'}</div>
+            <div class="nc-docker-content">
                 <div class="text">
                     {_'nattreid.cookiePolicy.text'}
                 </div>
@@ -25,10 +25,10 @@
     {/snippet}
     {snippet modal}
         <div class="nattreid-cookiePolicy-modal" n:ifset="$viewModal">
-            <div class="modal-background"></div>
-            <div class="modal-wrapper">
-                <span class="modal-close"></span>
-                <div class="modal-title">{_'nattreid.cookiePolicy.title'}</div>
+            <div class="nc-modal-background"></div>
+            <div class="nc-modal-wrapper">
+                <span class="nc-modal-close"></span>
+                <div class="nc-modal-title">{_'nattreid.cookiePolicy.title'}</div>
                 <ul>
                     <li class="privacy active">
                         <a href="#">{_'nattreid.cookiePolicy.privacy.title'}</a>
@@ -46,7 +46,7 @@
                         <a href="#">{_'nattreid.cookiePolicy.commercial.title'}</a>
                     </li>
                 </ul>
-                <div class="modal-content">
+                <div class="nc-modal-content">
                     <div class="privacy active">
                         <p class="title">{_'nattreid.cookiePolicy.privacy.title'}</p>
                         {_'nattreid.cookiePolicy.privacy.content'|noescape}
