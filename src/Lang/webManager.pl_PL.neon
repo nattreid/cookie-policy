@@ -1,0 +1,9 @@
+web:
+	hooks:
+		cookiePolicy:
+			title: "Ustawienia plików cookies"
+			enable: "Wyświetl potwierdzenie używania plików cookies"
+			link: "Link do informacji na temat używania plików cookies"
+			analytics: "Analityczne pliki cookies"
+			functional: "Funkcyjne pliki cookies"
+			commercial: "Reklamowe pliki cookies"

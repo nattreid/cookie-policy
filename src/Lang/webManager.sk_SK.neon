@@ -1,0 +1,9 @@
+web:
+	hooks:
+		cookiePolicy:
+			title: "Nastavenie súborov cookies"
+			enable: "Zobraziť potvrdenie používania cookies"
+			link: "Link pre informácie o požívaní cookies"
+			analytics: "Analytické súbory cookie"
+			functional: "Funkčné súbory cookie"
+			commercial: "Reklamné súbory cookie"

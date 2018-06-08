@@ -1,0 +1,9 @@
+﻿web:
+    hooks:
+        cookiePolicy:
+            title: "Cookie-Einstellungen"
+            enable: "Bestätigung der Cookie-Nutzung anzeigen"
+            link: "Link für Informationen zur Cookie-Nutzung"
+            analytics: "Analytische Cookie-Dateien"
+            functional: "Funktinale Cookie-Dateien"
+            commercial: "Werbecookie-Dateien"

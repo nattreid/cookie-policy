@@ -1,9 +1,9 @@
 web:
     hooks:
         cookiePolicy:
-            title: "Setting cookies"
-            enable: "Show cookie policy bar"
-            link: "Link for cookie policy information"
-            analytics: "Analytical cookies"
-            functional: "Functional cookies"
-            commercial: "Commercial cookies"
+            title: "Set of cookies files"
+            enable: "Display confirmation of cookies usage"
+            link: "Link for information about cookies usage"
+            analytics: "Analytic cookies files"
+            functional: "Function cookie files"
+            commercial: "Advertising cookies files"
