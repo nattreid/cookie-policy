@@ -4,7 +4,7 @@ return [
 	'nattreid.cookiePolicy.text' => 'Aby sme mohli prispôsobiť obsah a reklamy konkrétnym užívateľom, poskytovať funkcie sociálnych médií a analyzovať návštevnosť nášho webu, používame súbory cookie. Informácie o vašej práci s webom tiež zdieľame s našimi partnermi pre sociálne média, inzerciu a spracovanie analýzy, a to v súlade s dokumentom Zásady spracovania osobných údajov. V časti „Nastavenie súborov cookie“ môžete upraviť svoje preferencie. Používaním tohoto webu vyjadrujete súhlas s používaním súborov cookie.',
 	'nattreid.cookiePolicy.link' => 'Viac informácií',
 	'nattreid.cookiePolicy.settings' => 'Cookie nastavenie',
-	'nattreid.cookiePolicy.privacySettings' => 'Nastavenie súkromia',
+	'nattreid.cookiePolicy.privacySettings' => 'Ochrana súkromia a nastavenia',
 	'nattreid.cookiePolicy.allowAll' => 'Povoliť všetko',
 	'nattreid.cookiePolicy.save' => 'Uložiť nastavenia',
 	'nattreid.cookiePolicy.allowWithoutCommercial' => 'Povoliť bez cielenej reklamy',

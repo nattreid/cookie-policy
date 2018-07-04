@@ -4,7 +4,7 @@ return [
 	'nattreid.cookiePolicy.text' => 'Um Inhalte und Werbung für konkrete Nutzer personalisieren, Funktionen von Social Media bereitstellen und die Besucheranzahl unserer Webseite analysieren zu können, nutzen wir Cookie-Dateien. Die Informationen über Ihr Nutzerverhalten auf unserer Webseite teilen wir mit unseren Social-Media- und Werbepartnern und unseren Partnern für die Verarbeitung der Analysedaten. Dies steht alles im Einklang mit dem Dokument zu den Grundsätzen über die Verarbeitung personenbezogener Daten. Im Abschnitt „Cookie-Einstellungen“ können Sie Ihre Präferenzen bearbeiten. Durch die Nutzung dieser Webseite stimmen Sie der Benutzung von Cookie-Dateien zu.',
 	'nattreid.cookiePolicy.link' => 'Mehr Informationen',
 	'nattreid.cookiePolicy.settings' => 'Cookie-Einstellungen',
-	'nattreid.cookiePolicy.privacySettings' => 'Privatsphäre-EinstellungenNastavení soukromí',
+	'nattreid.cookiePolicy.privacySettings' => 'Privatsphäre-Einstellungen',
 	'nattreid.cookiePolicy.allowAll' => 'Alles erlauben',
 	'nattreid.cookiePolicy.save' => 'Einstellungen speichern',
 	'nattreid.cookiePolicy.allowWithoutCommercial' => 'Ohne zielgerichtete Werbung erlauben',

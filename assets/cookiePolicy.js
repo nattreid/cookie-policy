@@ -70,7 +70,9 @@
         });
 
         $(document).on('click', '.nattreid-cookiePolicy .nattreid-cookiePolicy-docker .nc-docker-head', function () {
-            $(this).parent().toggleClass('hover');
+            var obj = $(this).parent();
+            obj.toggleClass('hover');
+            obj.find('.nc-docker-content').slideToggle();
         });
     });
 

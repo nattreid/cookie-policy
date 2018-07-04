@@ -20,7 +20,6 @@
     box-sizing: border-box;
 
     .nc-docker-head {
-      display: none;
       vertical-align: top;
       cursor: pointer;
 
@@ -34,17 +33,24 @@
         position: absolute;
         top: 5px;
         right: 20px;
-        transform: rotate(180deg);
+
+        @angle: 180deg;
+        -webkit-transform: rotate(@angle);
+        -moz-transform: rotate(@angle);
+        -ms-transform: rotate(@angle);
+        -o-transform: rotate(@angle);
+        transform: rotate(@angle);
+
+        -webkit-transition: all 0.3s ease-out;
+        -moz-transition: all 0.3s ease-out;
+        -o-transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out;
       }
     }
 
     .nc-docker-content {
-      -webkit-transition: max-height .8s ease;
-      -moz-transition: max-height .8s ease;
-      -ms-transition: max-height .8s ease;
-      -o-transition: max-height .8s ease;
-      transition: max-height .8s ease;
       overflow: hidden;
+      display: none;
 
       .text {
         width: 100%;
@@ -75,22 +81,13 @@
     &.hover {
       .nc-docker-head {
         &:after {
-          transform: rotate(0deg);
+          @angle: 0deg;
+          -webkit-transform: rotate(@angle);
+          -moz-transform: rotate(@angle);
+          -ms-transform: rotate(@angle);
+          -o-transform: rotate(@angle);
+          transform: rotate(@angle);
         }
-      }
-
-      .nc-docker-content {
-        max-height: 600px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .nc-docker-head {
-        display: block;
-      }
-
-      .nc-docker-content {
-        max-height: 0;
       }
     }
   }
