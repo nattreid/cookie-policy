@@ -20,8 +20,8 @@ gulp.task('js', function () {
 });
 
 gulp.task('watch', function () {
-    gulp.watch('./assets/cookiePolicy.less', ['less']);
-    gulp.watch('./assets/cookiePolicy.js', ['js']);
+    gulp.watch('./assets/cookiePolicy.less', gulp.series('less'));
+    gulp.watch('./assets/cookiePolicy.js', gulp.series('js'));
 });
 
-gulp.task('default', ['less', 'js', 'watch']);
+gulp.task('default', gulp.series('less', 'js', 'watch'));
