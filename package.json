@@ -1,7 +1,7 @@
 {
   "name": "nattreid-cookie-policy",
   "description": "Cookie policy for Nette Framework",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "main": "./assets/cookiePolicy.js",
   "repository": {
 	"type": "git",
