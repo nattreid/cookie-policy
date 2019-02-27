@@ -9,12 +9,12 @@
                     {_'nattreid.cookiePolicy.text'}
                 </div>
                 <div class="links">
-                    <a class="ajax allowAll" n:href="allowAll!"
+                    <a rel="nofollow" class="ajax allowAll" n:href="allowAll!"
                        data-ajax-off="history">{_'nattreid.cookiePolicy.allowAll'}</a>
-                    <a n:if="$config->commercial" class="ajax" n:href="allowWithoutCommercial!"
+                    <a rel="nofollow" n:if="$config->commercial" class="ajax" n:href="allowWithoutCommercial!"
                        data-ajax-off="history">{_'nattreid.cookiePolicy.allowWithoutCommercial'}</a>
                     |
-                    <a class="ajax" n:href="settings!" data-ajax-off="history">{_'nattreid.cookiePolicy.settings'}</a>
+                    <a rel="nofollow" class="ajax" n:href="settings!" data-ajax-off="history">{_'nattreid.cookiePolicy.settings'}</a>
                     {if $config->link}
                         |
                         <a href="{$config->link}" target="_blank">{_'nattreid.cookiePolicy.link'}</a>
