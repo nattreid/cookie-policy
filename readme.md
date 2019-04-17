@@ -21,7 +21,7 @@ protected function createComponentCookiePolicy() {
     $control = $this->cookiePolicyFactory->create();
 
     // pro zmenu jazyka
-    $control->getTranslator()->setLang('cs');
+    $control->translator->setLang('cs');
 
     return $control;
 }
