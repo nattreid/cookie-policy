@@ -3,7 +3,7 @@
 return [
 	'nattreid' => [
 		'cookiePolicy' => [
-			'text' => 'We use cookie files to adapt the content and advertising, provide social media function and analyze attendance of our web for individual users.  We share information about your work on web with our partners for social media, advertising and processing of analysis in conformity with Principles of processing personal data documents. In a part „Setting of cookie files, you can set your preferences. By using it you agree with cookie files.',
+			'text' => 'We use cookie files to adapt the content and advertising, provide social media function and analyze attendance of our web for individual users.  We share information about your work on web with our partners for social media, advertising and processing of analysis in conformity with Principles of processing personal data documents. In a part „Setting of cookie files“, you can set your preferences. By using it you agree with cookie files.',
 			'link' => 'More information',
 			'settings' => 'Cookie setting',
 			'privacySettings' => 'Setting of privacy',
