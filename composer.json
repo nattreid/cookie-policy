@@ -13,11 +13,11 @@
   ],
   "require": {
 	"php": ">= 7.1",
-	"nette/application": "~2.4",
+	"nette/application": "~3.0",
 	"nattreid/latte": "~1.1"
   },
   "require-dev": {
-	"nette/tester": "~1.7",
+	"nette/tester": "~2.4",
 	"tracy/tracy": "~2.4",
 	"nattreid/web-manager": "~1.0",
 	"nattreid/form": "~1.0"
