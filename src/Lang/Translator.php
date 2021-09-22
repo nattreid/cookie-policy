@@ -38,7 +38,7 @@ class Translator implements ITranslator
 		return $this->translations;
 	}
 
-	public function translate($message, $count = null)
+	public function translate($message, ...$parameters): string
 	{
 		$translation = $this->getTranslations();
 

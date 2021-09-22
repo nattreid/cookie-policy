@@ -32,8 +32,9 @@ abstract class AbstractCookiePolicyExtension extends CompilerExtension
 
 		$cookiePolicy = $this->prepareConfig($config);
 
-		$builder->addDefinition($this->prefix('factory'))
+		$builder->addFactoryDefinition($this->prefix('factory'))
 			->setImplement(ICookiePolicyFactory::class)
+			->getResultDefinition()
 			->setFactory(CookiePolicy::class)
 			->setArguments([$cookiePolicy]);
 	}

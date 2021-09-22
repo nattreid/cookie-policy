@@ -54,7 +54,6 @@ class CookiePolicy extends Control
 
 	public function __construct(CookiePolicyConfig $config, Session $session, Request $request)
 	{
-		parent::__construct();
 		$this->session = $session->getSection('nattreid/cookiePolicy');
 		$this->config = $config;
 		$this->request = $request;
