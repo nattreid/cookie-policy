@@ -5,11 +5,11 @@
     }
 
     $(document).ready(function () {
-        $(document).on('click', '.nattreid-cookiePolicy .nattreid-cookiePolicy-modal .nc-modal-background, .nattreid-cookiePolicy .nattreid-cookiePolicy-modal .nc-modal-wrapper .nc-modal-close', function () {
-            $(this).closest('.nattreid-cookiePolicy-modal').fadeOut();
+        $(document).on('click', '.nattreid-cp .nattreid-cp-modal .nc-modal-background, .nattreid-cp .nattreid-cp-modal .nc-modal-wrapper .nc-modal-close', function () {
+            $(this).closest('.nattreid-cp-modal').fadeOut();
         });
 
-        $(document).on('click', '.nattreid-cookiePolicy .nattreid-cookiePolicy-modal .nc-modal-wrapper ul li a', function () {
+        $(document).on('click', '.nattreid-cp .nattreid-cp-modal .nc-modal-wrapper ul li a', function () {
             var obj = $(this);
             obj.closest('ul').find('li').removeClass('active');
             var name = obj.parent().attr('class');
@@ -23,10 +23,10 @@
             return false;
         });
 
-        $(document).on('click', '.nattreid-cookiePolicy .nattreid-cookiePolicy-modal .nc-modal-wrapper .checkbox', function () {
+        $(document).on('click', '.nattreid-cp .nattreid-cp-modal .nc-modal-wrapper .checkbox', function () {
             var obj = $(this);
 
-            var container = $('.nattreid-cookiePolicy');
+            var container = $('.nattreid-cp');
             var active = container.data('active');
             var inactive = container.data('inactive');
 
@@ -39,18 +39,18 @@
             return false;
         });
 
-        $(document).on('click', '.nattreid-cookiePolicy .nattreid-cookiePolicy-modal .nc-modal-wrapper .buttons .allowAll', function () {
+        $(document).on('click', '.nattreid-cp .nattreid-cp-modal .nc-modal-wrapper .buttons .allowAll', function () {
             var obj = $(this);
             $.nette.ajax({
                 url: obj.data('href'),
                 complete: function () {
-                    obj.closest('.nattreid-cookiePolicy').find('.nattreid-cookiePolicy-modal').fadeOut();
+                    obj.closest('.nattreid-cp').find('.nattreid-cp-modal').fadeOut();
                 }
             });
             return false;
         });
 
-        $(document).on('click', '.nattreid-cookiePolicy .nattreid-cookiePolicy-modal .nc-modal-wrapper .buttons .save', function () {
+        $(document).on('click', '.nattreid-cp .nattreid-cp-modal .nc-modal-wrapper .buttons .save', function () {
             var button = $(this);
 
             var data = {};
@@ -62,14 +62,14 @@
             $.nette.ajax({
                 url: button.data('href').replace('replaceQuery', JSON.stringify(data)),
                 complete: function () {
-                    button.closest('.nattreid-cookiePolicy-modal').fadeOut();
+                    button.closest('.nattreid-cp-modal').fadeOut();
                 }
             });
 
             return false;
         });
 
-        $(document).on('click', '.nattreid-cookiePolicy .nattreid-cookiePolicy-docker .nc-docker-head', function () {
+        $(document).on('click', '.nattreid-cp .nattreid-cp-docker .nc-docker-head', function () {
             var obj = $(this).parent();
             obj.toggleClass('hover');
             obj.find('.nc-docker-content').slideToggle();

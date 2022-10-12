@@ -1,8 +1,8 @@
-<div class="nattreid-cookiePolicy" id="{$componentId}-container"
+<div class="nattreid-cp" id="{$componentId}-container"
      data-active="{_'nattreid.cookiePolicy.active'}"
      data-inactive="{_'nattreid.cookiePolicy.inactive'}">
     {snippet docker}
-        <div class="nattreid-cookiePolicy-docker" n:if="$visible">
+        <div class="nattreid-cp-docker" n:if="$visible">
             <div class="nc-docker-head">{_'nattreid.cookiePolicy.privacySettings'}</div>
             <div class="nc-docker-content">
                 <div class="text">
@@ -24,7 +24,7 @@
         </div>
     {/snippet}
     {snippet modal}
-        <div class="nattreid-cookiePolicy-modal" n:ifset="$viewModal">
+        <div class="nattreid-cp-modal" n:ifset="$viewModal">
             <div class="nc-modal-background"></div>
             <div class="nc-modal-wrapper">
                 <span class="nc-modal-close"></span>
@@ -93,7 +93,7 @@
         <script type="text/javascript">
             function onload{$componentId|noescape}() {
                 var rand = {rand(1, 5000)};
-                $('#{$componentId|noescape}').find('.nattreid-cookiePolicy-modal').fadeIn();
+                $('#{$componentId|noescape}').find('.nattreid-cp-modal').fadeIn();
             }
             {onLoad onload$componentId}
         </script>
