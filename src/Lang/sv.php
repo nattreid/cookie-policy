@@ -15,7 +15,7 @@ return [
 			'inactive' => 'Inte aktiv',
 			'privacy' => [
 				'title' => 'Din integritet',
-				'content' => 'Webbplatser som du besöker kan lagra eller ladda information från din webbläsare, vanligtvis med cookies. Denna information kan beröra dig, dina preferenser eller din utrustning, och den används för att säkerställa optimalt arbete online. Det handlar om information som vanligtvis inte möjliggör direkt kontroll av din identitet, men som kan hjälpa dig att anpassa webben till dina krav och intressen. <br/> <br/> Vi respekterar att du har rätt till din integritet, så vi ger dig möjligheten att förbjuda alla cookiefiler. När du har klickat på den enskilda kategorin ser du detaljerad information och har möjligheten att justera den originala inställningen. Om du förbjuder vissa typer av cookies fungerar webben optimalt och du behöver inte använda några tjänster.', Necessary
+				'content' => 'Webbplatser som du besöker kan lagra eller ladda information från din webbläsare, vanligtvis med cookies. Denna information kan beröra dig, dina preferenser eller din utrustning, och den används för att säkerställa optimalt arbete online. Det handlar om information som vanligtvis inte möjliggör direkt kontroll av din identitet, men som kan hjälpa dig att anpassa webben till dina krav och intressen. <br/> <br/> Vi respekterar att du har rätt till din integritet, så vi ger dig möjligheten att förbjuda alla cookiefiler. När du har klickat på den enskilda kategorin ser du detaljerad information och har möjligheten att justera den originala inställningen. Om du förbjuder vissa typer av cookies fungerar webben optimalt och du behöver inte använda några tjänster.',
 			],
 			'needed' => [
 				'title' => 'Helt nödvändiga  cookies',
